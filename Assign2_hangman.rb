@@ -77,4 +77,3 @@ if no_tries>0
 else
 	puts "ded :p correct word is #{mnths[wd]}"
 end
-
