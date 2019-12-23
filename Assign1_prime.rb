@@ -22,3 +22,4 @@ if(ct>=1)
 else
 	puts "#{num} is prime"
 ends
+
