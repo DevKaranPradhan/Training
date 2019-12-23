@@ -205,7 +205,3 @@ Portal.show_menu
 	end
 #	puts ch, ct
 # end
-
-# start
-
-
