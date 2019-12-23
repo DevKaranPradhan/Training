@@ -43,3 +43,4 @@ if(gen.match(/\A[0-9]*[.]?[0-9]+\Z/))
 else
 	puts "invalid amount"
 end
+
