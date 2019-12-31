@@ -1,10 +1,8 @@
 module Check_country
 
   def check_loan_avb? population, gdp, states, state
-
     return true if population >= 3000000 && gdp >= 1500 && states >= 10 && state == 'developing'
     false
-
   end
 
   def check_seat_avb? population, gdp, states, state
@@ -28,7 +26,6 @@ class Country
   @@code = 0
 
   def initialize c_name, population, gdp, states, army_strength, state 
-
     @country_name = c_name
     @population = population
     @gdp = gdp
@@ -37,7 +34,6 @@ class Country
     @state_of_ctr = state
     @@code += 1
     @country_code = @@code
-  
   end
 
   def check_loan_avb? population=self.population, gdp=self.gdp, states=self.num_states, state=self.state_of_ctr
@@ -55,7 +51,6 @@ class Country
 end
 
 def create_obj
-
   puts "enter country name :"
   country_name = gets.chomp
   puts "enter population of the country :"
@@ -71,7 +66,6 @@ def create_obj
   country_object = Country.new country_name, population, gdp, states, army_strength, state
   puts "country code of #{country_name} is #{country_object.country_code}"
   country_object
-
 end
 
 countries = []
@@ -90,18 +84,15 @@ while ch != 4
 
   case ch
   when 1
-
     countries.push(create_obj)
     ind+=1
 
   when 2
 
     puts "enter country code"
-
     cd = gets.chomp.to_i
 
     if cd > 0 && cd <= ind
-    
       cd -= 1
       puts "Country name : #{countries[cd].country_name} (code : #{countries[cd].country_code})"
       puts "Population : #{countries[cd].population}"
@@ -109,30 +100,23 @@ while ch != 4
       puts "Number of States : #{countries[cd].num_states}"
       puts "Army Strength : #{countries[cd].army_str}"
       puts "State of #{countries[cd].country_name}: #{countries[cd].state_of_ctr}"
-
     else
       puts "invalid country code"
     end
 
   when 3
-
     puts "enter country code"
-
     cd = gets.chomp.to_i
 
     if cd > 0 && cd <= ind
-    
       cd -= 1
       puts "\n1. Check applicable for loan from IMF"
       puts "2. Check country can have a seat in UNSC"
       puts "3. Check if country can win war"
-
       chk = gets.chomp.to_i
 
       case chk
-      
       when 1
-        
         if countries[cd].check_loan_avb?
           puts "#{countries[cd].country_name} is applicable for loan"
         else
@@ -140,7 +124,6 @@ while ch != 4
         end
 
       when 2
-
         if countries[cd].check_seat_avb?
           puts "#{countries[cd].country_name} can have a seat in UNSC"
         else
@@ -148,7 +131,6 @@ while ch != 4
         end
 
       when 3
-        
         if countries[cd].can_win_war?
           puts "#{countries[cd].country_name} can win war"
         else
@@ -165,6 +147,7 @@ while ch != 4
 
   when 4
     break
+    
   else
     puts "invalid choice"
   end
