@@ -27,11 +27,11 @@ class Result
   # end
 
   def percentage
-    ct = 0.0
+    tot_mk = 0.0
     @marks.each do |a|
-      ct += a
+      tot_mk += a
     end
-    @per = ct/8.0
+    @per = tot_mk/8.0
   end
 
   def self.sub_hm(stu)
@@ -66,11 +66,11 @@ end
 
 
 puts "Enter number of students "
-ct = gets.chomp.to_i
+num_st = gets.chomp.to_i
 
 obj = []
 
-for i in 0..ct-1 do
+for i in 0..num_st-1 do
   p "Enter name of student #{i+1}" 
   name = gets
   marks = []
